@@ -70,6 +70,8 @@ var Color = {
 // thanks: https://awakened1712.github.io/hacking/hacking-frida/
 function bytes2hex(array) {
     var result = '';
+    if (array === null)
+        return result
     for (var i = 0; i < array.length; ++i)
         result += ('0' + (array[i] & 0xFF).toString(16)).slice(-2);
     return result;
